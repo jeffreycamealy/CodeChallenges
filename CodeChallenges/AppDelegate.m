@@ -18,6 +18,18 @@
     }                                               \
     printf("\n");
 
+#define print_array_n(array, n)                     \
+    for (int i = 0; i < n; i++) {                   \
+        printf("%i, ", array[i]);                   \
+    }                                               \
+    printf("\n");
+
+
+
+/////////////////////// Globals //////////////////////////////////
+
+static int numOpps;
+
 
 
 @implementation AppDelegate
@@ -129,31 +141,122 @@ void testCArrays () {
  * Merge Sort
  *
  */
-void mergeSort(int array[], int n) {
-    if (n == 1) {
-        // base case
-    }
+int *mergeSort(int array[], int n) {
+    numOpps++;
+    
+    if (n == 1) return array; // Base Case
     
     int split = n/2;
-    int *first = malloc(sizeof(int)*split);
-    int *last = malloc(sizeof(int)*n-split);
+    int first[split];
+    int last[n-split];
     memcpy(first, array, split*sizeof(int));
     memcpy(last, &array[split], (n-split)*sizeof(int));
     
-    printf("%lu\n", length_of(first));
-    printf("%lu\n", length_of(last));
     print_array(first);
     print_array(last);
     
-    merge(first, length_of(first), last, length_of(last));
+    int lengthOfFirst = (int)length_of(first);
+    int lengthOfLast = (int)length_of(last);
+    return merge(mergeSort(first, lengthOfFirst), lengthOfFirst,
+                 mergeSort(last, lengthOfLast), lengthOfLast);
 }
 
-void merge(int a1[], int n1, int a2[], int n2) {
+int *merge(int a1[], int n1, int a2[], int n2) {
+    print_array_n(a1, n1);
+    print_array_n(a2, n2);
+    int *array = malloc(sizeof(int)*(n1+n2));
     
+    int i = 0;
+    int j = 0;
+    int z = 0;
+    while (i < n1 || j < n2) {
+        numOpps++;
+        // out of n1
+        if (i == n1) {
+            array[z] = a2[j];
+            j++;
+            z++;
+            continue;
+        }
+        
+        // out of n2
+        if (j == n2) {
+            array[z] = a1[i];
+            i++;
+            z++;
+            continue;
+        }
+        
+        // find smallest
+        int num1 = a1[i];
+        int num2 = a2[j];
+        
+        if (num1 <= num2) {
+            array[z] = num1;
+            i++;
+        } else {
+            array[z] = num2;
+            j++;
+        }
+        z++;
+    }
+    print_array_n(array, n1+n2);
+    
+    return array;
+}
+
+int *randArray(int n) {
+    const int rangeMax = 1000;
+    int *randoms = malloc(sizeof(int)*n);
+    
+//    srand((unsigned int)time(NULL));
+    for(int i = 0; i < n; i++) {
+        randoms[i] = rand() % rangeMax + 1;
+    }
+    return  randoms;
+}
+
+void removeSpacesFromString(char string[]) {
+	char c;
+	int stringI = 0;
+	int *noSpaces = (int*)malloc(sizeof(int) * strlen(string));
+	int noSpacesI = 0;
+	do {
+		c = string[stringI];
+		if (c != ' ') {
+			noSpaces[noSpacesI] = stringI;
+			noSpacesI++;
+		}
+		stringI++;
+	} while (c != '\0');
+	
+	for (int i = 0; i < noSpacesI; i++) {
+		string[i] = string[noSpaces[i]];
+	}
+	string[noSpacesI] = '\0';
+	free(noSpaces);
 }
 
 
-#pragma mark - AppDelegate Implementation
+/**
+ *
+ * Can you retain an NSString literal?
+ * Can you retain NSNull
+ *
+ */
+- (void)testRetain {
+    NSString * string1 = [[NSString alloc] init] ;
+    
+    NSString * string2 = [[NSString alloc] init];
+    printf("strings have same pointer: %d\n", string1 == string2);
+    
+    NSNull * theNULL = [NSNull null];
+    
+    NSNull * theNULL2 = [[NSNull alloc] init];
+    printf("nulls have same pointer: %d\n", theNULL == theNULL2);
+}
+
+
 
 
 #pragma mark - AppDelegate Method
@@ -166,9 +269,15 @@ void merge(int a1[], int n1, int a2[], int n2) {
 #pragma mark - Private API
 
 - (void)testFunction {
-    int array[] = {4,3,7,6};
-    mergeSort(array, length_of(array));
-    print_array(array);
+    const int length = 5;
+    
+    int *array = randArray(length);
+    print_array_n(array, length);
+    
+    int *sorted = mergeSort(array, length);
+    printf("\n");
+    print_array_n(sorted, length);
+    printf("numOpps: %i", numOpps);
 }
 
 @end

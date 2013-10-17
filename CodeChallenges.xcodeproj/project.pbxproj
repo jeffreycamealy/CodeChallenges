@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00A54745180D9BCD0019664B /* QuickSort.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A54744180D9BCD0019664B /* QuickSort.m */; };
 		00CC082517F773FC009DBD28 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00CC082417F773FC009DBD28 /* Cocoa.framework */; };
 		00CC082F17F773FC009DBD28 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 00CC082D17F773FC009DBD28 /* InfoPlist.strings */; };
 		00CC083117F773FC009DBD28 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CC083017F773FC009DBD28 /* main.m */; };
@@ -31,6 +32,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		00A54743180D9BCD0019664B /* QuickSort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuickSort.h; sourceTree = "<group>"; };
+		00A54744180D9BCD0019664B /* QuickSort.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuickSort.m; sourceTree = "<group>"; };
 		00CC082117F773FC009DBD28 /* CodeChallenges.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CodeChallenges.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00CC082417F773FC009DBD28 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		00CC082717F773FC009DBD28 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -120,6 +123,8 @@
 				00CC083917F773FC009DBD28 /* MainMenu.xib */,
 				00CC083C17F773FC009DBD28 /* Images.xcassets */,
 				00CC082B17F773FC009DBD28 /* Supporting Files */,
+				00A54743180D9BCD0019664B /* QuickSort.h */,
+				00A54744180D9BCD0019664B /* QuickSort.m */,
 			);
 			path = CodeChallenges;
 			sourceTree = "<group>";
@@ -253,6 +258,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				00CC083817F773FC009DBD28 /* AppDelegate.m in Sources */,
+				00A54745180D9BCD0019664B /* QuickSort.m in Sources */,
 				00CC083117F773FC009DBD28 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -464,6 +470,7 @@
 				00CC085417F773FC009DBD28 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		00CC085517F773FC009DBD28 /* Build configuration list for PBXNativeTarget "CodeChallengesTests" */ = {
 			isa = XCConfigurationList;
@@ -472,6 +479,7 @@
 				00CC085717F773FC009DBD28 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
