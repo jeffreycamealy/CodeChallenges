@@ -152,8 +152,8 @@ int *mergeSort(int array[], int n) {
     memcpy(first, array, split*sizeof(int));
     memcpy(last, &array[split], (n-split)*sizeof(int));
     
-    print_array(first);
-    print_array(last);
+//    print_array(first);
+//    print_array(last);
     
     int lengthOfFirst = (int)length_of(first);
     int lengthOfLast = (int)length_of(last);
@@ -162,29 +162,30 @@ int *mergeSort(int array[], int n) {
 }
 
 int *merge(int a1[], int n1, int a2[], int n2) {
-    print_array_n(a1, n1);
-    print_array_n(a2, n2);
+//    print_array_n(a1, n1);
+//    print_array_n(a2, n2);
     int *array = malloc(sizeof(int)*(n1+n2));
     
     int i = 0;
     int j = 0;
     int z = 0;
-    while (i < n1 || j < n2) {
+    
+    while (1) {
         numOpps++;
         // out of n1
         if (i == n1) {
             array[z] = a2[j];
-            j++;
-            z++;
-            continue;
+            int bytesToCopy = sizeof(int)*(n2-j);
+            memcpy(&array[z], &a2[j], bytesToCopy);
+            break;
         }
         
         // out of n2
         if (j == n2) {
             array[z] = a1[i];
-            i++;
-            z++;
-            continue;
+            int bytesToCopy = sizeof(int)*(n1-i);
+            memcpy(&array[z], &a1[i], bytesToCopy);
+            break;
         }
         
         // find smallest
@@ -200,16 +201,15 @@ int *merge(int a1[], int n1, int a2[], int n2) {
         }
         z++;
     }
-    print_array_n(array, n1+n2);
     
     return array;
 }
 
 int *randArray(int n) {
-    const int rangeMax = 1000;
+    const int rangeMax = 10000;
     int *randoms = malloc(sizeof(int)*n);
     
-//    srand((unsigned int)time(NULL));
+    srand((unsigned int)time(NULL));
     for(int i = 0; i < n; i++) {
         randoms[i] = rand() % rangeMax + 1;
     }
@@ -269,7 +269,7 @@ void removeSpacesFromString(char string[]) {
 #pragma mark - Private API
 
 - (void)testFunction {
-    const int length = 5;
+    const int length = 1000;
     
     int *array = randArray(length);
     print_array_n(array, length);
