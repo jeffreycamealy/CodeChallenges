@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		00A54745180D9BCD0019664B /* QuickSort.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A54744180D9BCD0019664B /* QuickSort.m */; };
 		00CC082517F773FC009DBD28 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00CC082417F773FC009DBD28 /* Cocoa.framework */; };
 		00CC082F17F773FC009DBD28 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 00CC082D17F773FC009DBD28 /* InfoPlist.strings */; };
 		00CC083117F773FC009DBD28 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CC083017F773FC009DBD28 /* main.m */; };
@@ -19,6 +18,7 @@
 		00CC084517F773FC009DBD28 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00CC082417F773FC009DBD28 /* Cocoa.framework */; };
 		00CC084D17F773FC009DBD28 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 00CC084B17F773FC009DBD28 /* InfoPlist.strings */; };
 		00CC084F17F773FC009DBD28 /* CodeChallengesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CC084E17F773FC009DBD28 /* CodeChallengesTests.m */; };
+		00F7619E1815FC3B00930BE6 /* MergeSort102113.c in Sources */ = {isa = PBXBuildFile; fileRef = 00F7619C1815F63E00930BE6 /* MergeSort102113.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,8 +32,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		00A54743180D9BCD0019664B /* QuickSort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuickSort.h; sourceTree = "<group>"; };
-		00A54744180D9BCD0019664B /* QuickSort.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuickSort.m; sourceTree = "<group>"; };
+		00A54743180D9BCD0019664B /* QuickSort090113.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuickSort090113.h; sourceTree = "<group>"; };
+		00A54744180D9BCD0019664B /* QuickSort090113.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuickSort090113.m; sourceTree = "<group>"; };
 		00CC082117F773FC009DBD28 /* CodeChallenges.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CodeChallenges.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00CC082417F773FC009DBD28 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		00CC082717F773FC009DBD28 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -53,6 +53,11 @@
 		00CC084A17F773FC009DBD28 /* CodeChallengesTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CodeChallengesTests-Info.plist"; sourceTree = "<group>"; };
 		00CC084C17F773FC009DBD28 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		00CC084E17F773FC009DBD28 /* CodeChallengesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CodeChallengesTests.m; sourceTree = "<group>"; };
+		00F761931815EF7100930BE6 /* MergeSort100113.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MergeSort100113.m; sourceTree = "<group>"; };
+		00F761951815F00D00930BE6 /* Macros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Macros.h; sourceTree = "<group>"; };
+		00F7619A1815F0C600930BE6 /* MergeSort102013.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MergeSort102013.m; sourceTree = "<group>"; };
+		00F7619C1815F63E00930BE6 /* MergeSort102113.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = MergeSort102113.c; sourceTree = "<group>"; };
+		00F7619F1815FCC800930BE6 /* MergeSort102113.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MergeSort102113.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,13 +123,11 @@
 		00CC082A17F773FC009DBD28 /* CodeChallenges */ = {
 			isa = PBXGroup;
 			children = (
-				00CC083617F773FC009DBD28 /* AppDelegate.h */,
-				00CC083717F773FC009DBD28 /* AppDelegate.m */,
-				00CC083917F773FC009DBD28 /* MainMenu.xib */,
-				00CC083C17F773FC009DBD28 /* Images.xcassets */,
+				00F761981815F0A400930BE6 /* Macros */,
+				00F761911815EE9B00930BE6 /* AppDelegate */,
+				00F761971815F09600930BE6 /* QuickSort */,
+				00F761961815F09000930BE6 /* MergeSort */,
 				00CC082B17F773FC009DBD28 /* Supporting Files */,
-				00A54743180D9BCD0019664B /* QuickSort.h */,
-				00A54744180D9BCD0019664B /* QuickSort.m */,
 			);
 			path = CodeChallenges;
 			sourceTree = "<group>";
@@ -132,6 +135,8 @@
 		00CC082B17F773FC009DBD28 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				00CC083C17F773FC009DBD28 /* Images.xcassets */,
+				00CC083917F773FC009DBD28 /* MainMenu.xib */,
 				00CC082C17F773FC009DBD28 /* CodeChallenges-Info.plist */,
 				00CC082D17F773FC009DBD28 /* InfoPlist.strings */,
 				00CC083017F773FC009DBD28 /* main.m */,
@@ -157,6 +162,43 @@
 				00CC084B17F773FC009DBD28 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		00F761911815EE9B00930BE6 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				00CC083617F773FC009DBD28 /* AppDelegate.h */,
+				00CC083717F773FC009DBD28 /* AppDelegate.m */,
+			);
+			name = AppDelegate;
+			sourceTree = "<group>";
+		};
+		00F761961815F09000930BE6 /* MergeSort */ = {
+			isa = PBXGroup;
+			children = (
+				00F761931815EF7100930BE6 /* MergeSort100113.m */,
+				00F7619A1815F0C600930BE6 /* MergeSort102013.m */,
+				00F7619F1815FCC800930BE6 /* MergeSort102113.h */,
+				00F7619C1815F63E00930BE6 /* MergeSort102113.c */,
+			);
+			name = MergeSort;
+			sourceTree = "<group>";
+		};
+		00F761971815F09600930BE6 /* QuickSort */ = {
+			isa = PBXGroup;
+			children = (
+				00A54743180D9BCD0019664B /* QuickSort090113.h */,
+				00A54744180D9BCD0019664B /* QuickSort090113.m */,
+			);
+			name = QuickSort;
+			sourceTree = "<group>";
+		};
+		00F761981815F0A400930BE6 /* Macros */ = {
+			isa = PBXGroup;
+			children = (
+				00F761951815F00D00930BE6 /* Macros.h */,
+			);
+			name = Macros;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,7 +300,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				00CC083817F773FC009DBD28 /* AppDelegate.m in Sources */,
-				00A54745180D9BCD0019664B /* QuickSort.m in Sources */,
+				00F7619E1815FC3B00930BE6 /* MergeSort102113.c in Sources */,
 				00CC083117F773FC009DBD28 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

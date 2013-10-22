@@ -7,34 +7,12 @@
 //
 
 #import "AppDelegate.h"
-
-/////////////////////// Helper Functions //////////////////////////
-
-#define length_of(array) sizeof(array)/sizeof(array[0])
-
-#define print_array(array)                          \
-    for (int i = 0; i < length_of(array); i++) {    \
-        printf("%i, ", array[i]);                   \
-    }                                               \
-    printf("\n");
-
-#define print_array_n(array, n)                     \
-    for (int i = 0; i < n; i++) {                   \
-        printf("%i, ", array[i]);                   \
-    }                                               \
-    printf("\n");
-
-
-
-/////////////////////// Globals //////////////////////////////////
-
-static int numOpps;
+#import "Macros.h"
+#import "MergeSort102113.h"
 
 
 
 @implementation AppDelegate
-
-/////////////////////// Code Challenges ///////////////////////////
 
 
 /***
@@ -136,80 +114,13 @@ void testCArrays () {
 }
 
 
-/**
- *
- * Merge Sort
- *
- */
-int *mergeSort(int array[], int n) {
-    numOpps++;
-    
-    if (n == 1) return array; // Base Case
-    
-    int split = n/2;
-    int first[split];
-    int last[n-split];
-    memcpy(first, array, split*sizeof(int));
-    memcpy(last, &array[split], (n-split)*sizeof(int));
-    
-//    print_array(first);
-//    print_array(last);
-    
-    int lengthOfFirst = (int)length_of(first);
-    int lengthOfLast = (int)length_of(last);
-    return merge(mergeSort(first, lengthOfFirst), lengthOfFirst,
-                 mergeSort(last, lengthOfLast), lengthOfLast);
-}
 
-int *merge(int a1[], int n1, int a2[], int n2) {
-//    print_array_n(a1, n1);
-//    print_array_n(a2, n2);
-    int *array = malloc(sizeof(int)*(n1+n2));
-    
-    int i = 0;
-    int j = 0;
-    int z = 0;
-    
-    while (1) {
-        numOpps++;
-        // out of n1
-        if (i == n1) {
-            array[z] = a2[j];
-            int bytesToCopy = sizeof(int)*(n2-j);
-            memcpy(&array[z], &a2[j], bytesToCopy);
-            break;
-        }
-        
-        // out of n2
-        if (j == n2) {
-            array[z] = a1[i];
-            int bytesToCopy = sizeof(int)*(n1-i);
-            memcpy(&array[z], &a1[i], bytesToCopy);
-            break;
-        }
-        
-        // find smallest
-        int num1 = a1[i];
-        int num2 = a2[j];
-        
-        if (num1 <= num2) {
-            array[z] = num1;
-            i++;
-        } else {
-            array[z] = num2;
-            j++;
-        }
-        z++;
-    }
-    
-    return array;
-}
 
 int *randArray(int n) {
     const int rangeMax = 10000;
     int *randoms = malloc(sizeof(int)*n);
     
-    srand((unsigned int)time(NULL));
+//    srand((unsigned int)time(NULL));
     for(int i = 0; i < n; i++) {
         randoms[i] = rand() % rangeMax + 1;
     }
@@ -259,6 +170,11 @@ void removeSpacesFromString(char string[]) {
 
 
 
+
+
+
+
+
 #pragma mark - AppDelegate Method
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
@@ -269,15 +185,13 @@ void removeSpacesFromString(char string[]) {
 #pragma mark - Private API
 
 - (void)testFunction {
-    const int length = 1000;
+    const int length = 6;
     
     int *array = randArray(length);
     print_array_n(array, length);
     
-    int *sorted = mergeSort(array, length);
-    printf("\n");
-    print_array_n(sorted, length);
-    printf("numOpps: %i", numOpps);
+    merge_sort(array, 0, length-1);
+    print_array_n(array, length);
 }
 
 @end

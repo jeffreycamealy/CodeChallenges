@@ -8,3 +8,4 @@
 
 #import <Foundation/Foundation.h>
 
+int *quickSort(int *array, int length);
