@@ -17,8 +17,6 @@ void merge_sort(int array[], int low, int high) {
     
     int mid = (low+high)/2;
     
-    printf("low: %i, high: %i\n", low, high);
-    
     merge_sort(array, low, mid);
     merge_sort(array, mid+1, high);
     merge(array,low,mid,high);
@@ -39,11 +37,8 @@ void merge(int array[], int low, int mid, int high) {
         }
     }
     
-    print_array(temp);
     memcpy(&temp[t], &array[i], sizeof(int)*(mid-i+1));
-    print_array(temp);
     memcpy(&temp[t], &array[j], sizeof(int)*(high-j+1));
-    print_array(temp);
     
     memcpy(&array[low], temp, sizeof(int)*(high-low+1));
 }

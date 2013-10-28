@@ -9,6 +9,8 @@
 #import "AppDelegate.h"
 #import "Macros.h"
 #import "MergeSort102113.h"
+#import "BMStack.h"
+#import "Amicable.h"
 
 
 
@@ -94,23 +96,45 @@ unsigned int sumOf_3_5_MultiplesBelow_v2(unsigned int n) {
     return sumOf(3, n-1) + sumOf(5, n-1) - sumOf(15, n-1);
 }
 
-
-/**
- *
- * Implement a basic stack using a linked list
- *
- */
-struct linked_list {
-    int data;
-    struct linked_list *next;
-};
-
 void testCArrays () {
-    CGPoint *points = malloc(sizeof(CGPoint)*5);
-    points[0] = CGPointMake(MAXFLOAT, MAXFLOAT);
-    points[1] = CGPointMake(1, 1);
-    points[2] = CGPointMake(0, 0);
+    int *array = malloc(sizeof(int)*16);
+    memset(array, 0, sizeof(int)*16);
     
+    array[0] = 0x12345678;
+    array[1] = 0x11111111;
+    array[2] = 0x12345678;
+    array[3] = 0x11111111;
+    
+    unsigned char *p = (unsigned char *)array;
+    int i;
+    
+//    for (i = 0; i < 64; i++)
+//        printf("%02x ", p[i]);
+    
+    for (i = 63; i >= 0; i--)
+        printf("%02x ", p[i]);
+//    printBytes((char *)array, 64);
+    
+//    const char* p = (char *)array;
+////    const char* pEnd = p + 64;
+//    
+//    for (int i = 0; i < 64; i++) {
+//        printf("%X", *(array+i));
+//    }
+    
+//    while ( p < pEnd )
+//    {
+//        printf( "%X", *p );
+//        ++p; 
+//    } 
+//    puts("");
+    
+}
+
+void printBytes(char *start, int numBytes) {
+    for (int i = 0; i < numBytes; i++) {
+        printf("%X", *(start+1));
+    }
 }
 
 
@@ -178,14 +202,17 @@ void removeSpacesFromString(char string[]) {
 #pragma mark - AppDelegate Method
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-    [self testFunction];
+    bool a = areAmicable(220, 284);
+    bool b = areAmicable(300, 320);
+    printf("%d\n", a);
+    printf("%d", b);
 }
 
 
 #pragma mark - Private API
 
 - (void)testFunction {
-    const int length = 6;
+    const int length = 600;
     
     int *array = randArray(length);
     print_array_n(array, length);
