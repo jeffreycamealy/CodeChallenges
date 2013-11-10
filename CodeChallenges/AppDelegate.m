@@ -13,6 +13,7 @@
 #import "MergeSort111013.h"
 #import "QuickSort111013.h"
 #import "TestingFunctions.h"
+#import "MemoryAccess.h"
 
 
 
@@ -198,7 +199,7 @@ void removeSpacesFromString(char string[]) {
 #pragma mark - AppDelegate Method
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-    [self quickSortTest];
+    [self memoryAccessTest];
 }
 
 
@@ -222,6 +223,10 @@ void removeSpacesFromString(char string[]) {
     
     quickSort(array, length);
     print_array_n(array, length);
+}
+
+- (void)memoryAccessTest {
+    accessMemory();
 }
 
 @end
