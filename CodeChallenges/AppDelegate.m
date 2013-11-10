@@ -8,9 +8,9 @@
 
 #import "AppDelegate.h"
 #import "Macros.h"
-#import "MergeSort102113.h"
 #import "BMStack.h"
 #import "Amicable.h"
+#import "MergeSort111013.h"
 
 
 
@@ -108,27 +108,35 @@ void testCArrays () {
     unsigned char *p = (unsigned char *)array;
     int i;
     
-//    for (i = 0; i < 64; i++)
+    
+    for (i = 0; i < 16; i++)
+        printf("%p %02x\n", (void *)&p[i], p[i]);
+    
+    // array[0]
+    printf("\n");
+    printf("*array: 0x%08x\n", *array);
+    printf("array[0]: 0x%08x\n\n", array[0]); // Same
+    
+    printf("array: %p\n", array);
+    printf("&(*array): %p\n", &(*array)); // Same
+    printf("array: 0x%08x\n\n", (unsigned int)array); // Array is a pointer
+    
+    printf("&array: %p\n\n", &array); // Address of the pointer (not the value of the pointer)
+    
+    
+    // array[1]
+    printf("*(array+1): 0x%08x\n", *(array+1));
+    printf("array[1]: 0x%08x\n\n", array[1]); // Same
+    
+    printf("(array+1): %p\n\n", (array+1));
+    
+    // study: http://en.wikipedia.org/wiki/Little_endian#Little-endian
+    
+    
+//    for (i = 63; i >= 0; i--)
 //        printf("%02x ", p[i]);
     
-    for (i = 63; i >= 0; i--)
-        printf("%02x ", p[i]);
 //    printBytes((char *)array, 64);
-    
-//    const char* p = (char *)array;
-////    const char* pEnd = p + 64;
-//    
-//    for (int i = 0; i < 64; i++) {
-//        printf("%X", *(array+i));
-//    }
-    
-//    while ( p < pEnd )
-//    {
-//        printf( "%X", *p );
-//        ++p; 
-//    } 
-//    puts("");
-    
 }
 
 void printBytes(char *start, int numBytes) {
@@ -141,7 +149,7 @@ void printBytes(char *start, int numBytes) {
 
 
 int *randArray(int n) {
-    const int rangeMax = 10000;
+    const int rangeMax = 1000;
     int *randoms = malloc(sizeof(int)*n);
     
 //    srand((unsigned int)time(NULL));
@@ -202,22 +210,19 @@ void removeSpacesFromString(char string[]) {
 #pragma mark - AppDelegate Method
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-    bool a = areAmicable(220, 284);
-    bool b = areAmicable(300, 320);
-    printf("%d\n", a);
-    printf("%d", b);
+    [self mergeSortTest];
 }
 
 
 #pragma mark - Private API
 
-- (void)testFunction {
+- (void)mergeSortTest {
     const int length = 600;
     
     int *array = randArray(length);
     print_array_n(array, length);
     
-    merge_sort(array, 0, length-1);
+    mergeSort(array, 0, length-1);
     print_array_n(array, length);
 }
 

@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		004E35CC1819BCBF00D0A2BF /* Amicable.m in Sources */ = {isa = PBXBuildFile; fileRef = 004E35CB1819BCBF00D0A2BF /* Amicable.m */; };
-		006FCB94181ED0A900535F1E /* MergeSort102813.m in Sources */ = {isa = PBXBuildFile; fileRef = 006FCB93181ED0A900535F1E /* MergeSort102813.m */; };
+		007F8269182FD8AB00B408F3 /* MergeSort111013.m in Sources */ = {isa = PBXBuildFile; fileRef = 007F8268182FD8AB00B408F3 /* MergeSort111013.m */; };
 		00CC082517F773FC009DBD28 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00CC082417F773FC009DBD28 /* Cocoa.framework */; };
 		00CC082F17F773FC009DBD28 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 00CC082D17F773FC009DBD28 /* InfoPlist.strings */; };
 		00CC083117F773FC009DBD28 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CC083017F773FC009DBD28 /* main.m */; };
@@ -20,7 +20,6 @@
 		00CC084517F773FC009DBD28 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00CC082417F773FC009DBD28 /* Cocoa.framework */; };
 		00CC084D17F773FC009DBD28 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 00CC084B17F773FC009DBD28 /* InfoPlist.strings */; };
 		00CC084F17F773FC009DBD28 /* CodeChallengesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00CC084E17F773FC009DBD28 /* CodeChallengesTests.m */; };
-		00F7619E1815FC3B00930BE6 /* MergeSort102113.c in Sources */ = {isa = PBXBuildFile; fileRef = 00F7619C1815F63E00930BE6 /* MergeSort102113.c */; };
 		00F761A3181614C600930BE6 /* BMStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F761A2181614C600930BE6 /* BMStack.m */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +38,8 @@
 		004E35CB1819BCBF00D0A2BF /* Amicable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Amicable.m; sourceTree = "<group>"; };
 		006FCB92181ED0A900535F1E /* MergeSort102813.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MergeSort102813.h; sourceTree = "<group>"; };
 		006FCB93181ED0A900535F1E /* MergeSort102813.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MergeSort102813.m; sourceTree = "<group>"; };
+		007F8267182FD8AB00B408F3 /* MergeSort111013.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MergeSort111013.h; sourceTree = "<group>"; };
+		007F8268182FD8AB00B408F3 /* MergeSort111013.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MergeSort111013.m; sourceTree = "<group>"; };
 		00A54743180D9BCD0019664B /* QuickSort090113.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuickSort090113.h; sourceTree = "<group>"; };
 		00A54744180D9BCD0019664B /* QuickSort090113.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuickSort090113.m; sourceTree = "<group>"; };
 		00CC082117F773FC009DBD28 /* CodeChallenges.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CodeChallenges.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -202,6 +203,8 @@
 				00F7619C1815F63E00930BE6 /* MergeSort102113.c */,
 				006FCB92181ED0A900535F1E /* MergeSort102813.h */,
 				006FCB93181ED0A900535F1E /* MergeSort102813.m */,
+				007F8267182FD8AB00B408F3 /* MergeSort111013.h */,
+				007F8268182FD8AB00B408F3 /* MergeSort111013.m */,
 			);
 			name = MergeSort;
 			sourceTree = "<group>";
@@ -331,10 +334,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				00CC083817F773FC009DBD28 /* AppDelegate.m in Sources */,
-				006FCB94181ED0A900535F1E /* MergeSort102813.m in Sources */,
 				004E35CC1819BCBF00D0A2BF /* Amicable.m in Sources */,
+				007F8269182FD8AB00B408F3 /* MergeSort111013.m in Sources */,
 				00F761A3181614C600930BE6 /* BMStack.m in Sources */,
-				00F7619E1815FC3B00930BE6 /* MergeSort102113.c in Sources */,
 				00CC083117F773FC009DBD28 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
