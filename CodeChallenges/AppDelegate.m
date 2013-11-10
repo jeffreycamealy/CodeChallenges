@@ -11,6 +11,8 @@
 #import "BMStack.h"
 #import "Amicable.h"
 #import "MergeSort111013.h"
+#import "QuickSort111013.h"
+#import "TestingFunctions.h"
 
 
 
@@ -145,20 +147,6 @@ void printBytes(char *start, int numBytes) {
     }
 }
 
-
-
-
-int *randArray(int n) {
-    const int rangeMax = 1000;
-    int *randoms = malloc(sizeof(int)*n);
-    
-//    srand((unsigned int)time(NULL));
-    for(int i = 0; i < n; i++) {
-        randoms[i] = rand() % rangeMax + 1;
-    }
-    return  randoms;
-}
-
 void removeSpacesFromString(char string[]) {
 	char c;
 	int stringI = 0;
@@ -210,19 +198,29 @@ void removeSpacesFromString(char string[]) {
 #pragma mark - AppDelegate Method
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-    [self mergeSortTest];
+    [self quickSortTest];
 }
 
 
 #pragma mark - Private API
 
 - (void)mergeSortTest {
+//    const int length = 600;
+//    
+//    int *array = randArray(length);
+//    print_array_n(array, length);
+//    
+//    mergeSort(array, 0, length-1);
+//    print_array_n(array, length);
+}
+
+- (void)quickSortTest {
     const int length = 600;
     
-    int *array = randArray(length);
+    int *array = randArray(length, 1000, false);
     print_array_n(array, length);
     
-    mergeSort(array, 0, length-1);
+    quickSort(array, length);
     print_array_n(array, length);
 }
 
