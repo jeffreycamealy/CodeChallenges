@@ -14,6 +14,7 @@
 #import "QuickSort111013.h"
 #import "TestingFunctions.h"
 #import "MemoryAccess.h"
+#import "HeapSort111013.h"
 
 
 
@@ -199,7 +200,7 @@ void removeSpacesFromString(char string[]) {
 #pragma mark - AppDelegate Method
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-    [self memoryAccessTest];
+    [self heapSortTest];
 }
 
 
@@ -227,6 +228,16 @@ void removeSpacesFromString(char string[]) {
 
 - (void)memoryAccessTest {
     accessMemory();
+}
+
+- (void)heapSortTest {
+    const int length = 600;
+    
+    int *array = randArray(length, 1000, false);
+    print_array_n(array, length);
+    
+    heapSort(array, length);
+    print_array_n(array, length);
 }
 
 @end
