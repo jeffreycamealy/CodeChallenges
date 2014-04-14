@@ -189,6 +189,16 @@ void removeSpacesFromString(char string[]) {
     printf("nulls have same pointer: %d\n", theNULL == theNULL2);
 }
 
+int missingIntFromSeries() {
+    int num;
+    scanf("%d", &num);
+    
+    for (int i = 0; i < num; i++) {
+        
+    }
+    return 0;
+}
+
 
 
 
@@ -200,7 +210,9 @@ void removeSpacesFromString(char string[]) {
 #pragma mark - AppDelegate Method
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-    [self heapSortTest];
+//    missingIntFromSeries();
+    float t[] = {2.2, 3.4, 5.5};
+    int j[] = {2,3,4};
 }
 
 
