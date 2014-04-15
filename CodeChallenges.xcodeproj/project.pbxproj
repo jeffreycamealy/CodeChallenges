@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		002FD6D118FCBA48001705AB /* SumOfThree041414.m in Sources */ = {isa = PBXBuildFile; fileRef = 002FD6D018FCBA48001705AB /* SumOfThree041414.m */; };
 		004E35CC1819BCBF00D0A2BF /* Amicable.m in Sources */ = {isa = PBXBuildFile; fileRef = 004E35CB1819BCBF00D0A2BF /* Amicable.m */; };
 		007F8269182FD8AB00B408F3 /* MergeSort111013.m in Sources */ = {isa = PBXBuildFile; fileRef = 007F8268182FD8AB00B408F3 /* MergeSort111013.m */; };
 		007F826C182FF75C00B408F3 /* QuickSort111013.m in Sources */ = {isa = PBXBuildFile; fileRef = 007F826B182FF75C00B408F3 /* QuickSort111013.m */; };
@@ -38,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		002FD6CF18FCBA48001705AB /* SumOfThree041414.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SumOfThree041414.h; sourceTree = "<group>"; };
+		002FD6D018FCBA48001705AB /* SumOfThree041414.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SumOfThree041414.m; sourceTree = "<group>"; };
 		004E35CA1819BCBF00D0A2BF /* Amicable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Amicable.h; sourceTree = "<group>"; };
 		004E35CB1819BCBF00D0A2BF /* Amicable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Amicable.m; sourceTree = "<group>"; };
 		006FCB92181ED0A900535F1E /* MergeSort102813.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MergeSort102813.h; sourceTree = "<group>"; };
@@ -103,6 +106,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		002FD6CE18FCB996001705AB /* SumOfThree */ = {
+			isa = PBXGroup;
+			children = (
+				002FD6CF18FCBA48001705AB /* SumOfThree041414.h */,
+				002FD6D018FCBA48001705AB /* SumOfThree041414.m */,
+			);
+			name = SumOfThree;
+			sourceTree = "<group>";
+		};
 		004E35CD1819BCC100D0A2BF /* Amicable */ = {
 			isa = PBXGroup;
 			children = (
@@ -133,6 +145,7 @@
 		007F8272182FFE2B00B408F3 /* Challenges */ = {
 			isa = PBXGroup;
 			children = (
+				002FD6CE18FCB996001705AB /* SumOfThree */,
 				007F827318300C6A00B408F3 /* MemoryAccess */,
 				00F761971815F09600930BE6 /* QuickSort */,
 				00F761961815F09000930BE6 /* MergeSort */,
@@ -396,6 +409,7 @@
 				00CC083817F773FC009DBD28 /* AppDelegate.m in Sources */,
 				004E35CC1819BCBF00D0A2BF /* Amicable.m in Sources */,
 				007F826C182FF75C00B408F3 /* QuickSort111013.m in Sources */,
+				002FD6D118FCBA48001705AB /* SumOfThree041414.m in Sources */,
 				007F8269182FD8AB00B408F3 /* MergeSort111013.m in Sources */,
 				007F827618300C7800B408F3 /* MemoryAccess.m in Sources */,
 				007F832A183081AA00B408F3 /* HeapSort111013.m in Sources */,

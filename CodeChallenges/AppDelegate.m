@@ -211,8 +211,6 @@ int missingIntFromSeries() {
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
 //    missingIntFromSeries();
-    float t[] = {2.2, 3.4, 5.5};
-    int j[] = {2,3,4};
 }
 
 

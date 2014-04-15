@@ -7,6 +7,7 @@
 //
 
 #import <XCTest/XCTest.h>
+#import "SumOfThree041414.h"
 
 @interface CodeChallengesTests : XCTestCase
 
@@ -26,9 +27,16 @@
     [super tearDown];
 }
 
-- (void)testExample
+- (void)testSumOfThrees
 {
-    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
+    SumOfThree041414 *summer = [SumOfThree041414 new];
+    
+    NSArray *array = @[@2, @5, @9, @1, @4, @10, @8, @6];
+    
+    XCTAssert([summer array:array sumsTo:16], @"Should sum to 16");
+    XCTAssertFalse([summer array:array sumsTo:1], @"Should not sum to 1");
+    XCTAssert([summer array:array sumsTo:15], @"Should sum to 15");
+    XCTAssertFalse([summer array:array sumsTo:100], @"Should not sum to 100");
 }
 
 @end
